@@ -160,3 +160,29 @@ import matplotlib.pyplot as plt
 # numpy_tensor = tensor.numpy()
 # print(f"NumPy array from tensor = {numpy_tensor}")
 # print(numpy_tensor.dtype)
+
+# RANDOM_SEED = 42
+
+# torch.manual_seed(RANDOM_SEED)
+# tensor_A = torch.rand(3,4)
+
+# torch.manual_seed(RANDOM_SEED)
+# tensor_B = torch.rand(3,4)
+
+# print(f"tensor_A = {tensor_A}")
+# print(f"tensor_B = {tensor_B}")
+# print(f"is tensor_A == tensor_B ? = {tensor_A == tensor_B}")
+
+device = "cuda" if torch.cuda.is_available() else "cpu"
+print(device)
+
+tensor = torch.tensor([1,2,3])
+print(f"{tensor}, {tensor.device}")
+
+tensor_on_gpu = tensor.to(device)
+print(f"{tensor_on_gpu}, {tensor_on_gpu.device}")
+
+# NOTE: To fix the GPU Tensor with NumPy issue, we can first set it to the CPU
+
+tensor_on_cpu = tensor_on_gpu.cpu().numpy()
+print(tensor_on_cpu)
