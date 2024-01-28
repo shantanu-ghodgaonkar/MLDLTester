@@ -138,4 +138,25 @@ import matplotlib.pyplot as plt
 # print(f"x_permute.shape = {x_permute.shape}")
 # # NOTE: torch.permute also returns a view, so be careful
 
+# x = torch.arange(1,10).reshape(1,3,3)
+# print(f"x = {x}")
+# print(f"x.shape = {x.shape}")
 
+# print(f"x[0] = {x[0]}")
+# print(f"x[0][0] = {x[0][0]}")
+# print(f"x[0][:][2] = {x[0][:][2]}") # returns [7,8,9]
+# print(f"x[0,:,2] = {x[0,:,2]}") # returns [3,6,9]
+
+# array = np.arange(1.0, 8.0)
+# print(f"NumPy array = {array}")
+
+# tensor = torch.from_numpy(array).type(torch.float32)
+# print(f"tensor from NumPy array = {tensor}")
+
+# NOTE: When converting from numpy -> pytorch, pytorch reflects numpy's default datatype of float64 unless specified otherwise, as shown above; and vice versa
+
+# tensor = torch.ones(7)
+# print(f"tensor = {tensor}")
+# numpy_tensor = tensor.numpy()
+# print(f"NumPy array from tensor = {numpy_tensor}")
+# print(numpy_tensor.dtype)
